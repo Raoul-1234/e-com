@@ -33,33 +33,28 @@ onMounted(() => {
             error => console.error(error)
         })
 })
-
-
-
-
 </script>
 
-
 <template>
-    <HeroComponent />
     <div class="containerComponent">
         <CategorieComponent @showElement="categories =$event"/>
-        <div class="container">
-            <div class="items" v-for="post in postsFilter" :key="post.id" @click="showAriticle(post.id)">
-                <div class="divImg">
-                    <img :src="post.images[0]" :alt="post.title" class="product-img" />
-                </div>
-                <h3 class="product-title">{{ post.title }}</h3>
-                <p class="product-brand">Marque : {{ post.brand }}</p>
-                <p class="product-category">Categorie : {{ post.category }}</p>
-                <!-- <p class="product-desc">{{ post.description }}</p> -->
-                <p class="product-rating"><span v-for="value in Math.floor(post.rating || 0)">⭐</span>{{ post.rating }}
-                </p>
-
-                <div class="marqueBtn">
-                    <p class="product-price">{{ post.price }} $</p>
-
-                    <button class="btn-add">Ajouter</button>
+        <div>
+            <HeroComponent />
+            <div class="container">
+                <div class="items" v-for="post in postsFilter" :key="post.id" @click="showAriticle(post.id)">
+                    <div class="divImg">
+                        <img :src="post.images[0]" :alt="post.title" class="product-img" />
+                    </div>
+                    <h3 class="product-title">{{ post.title }}</h3>
+                    <!-- <p class="product-category">Categorie : {{ post.category }}</p> -->
+                    <!-- <p class="product-brand">Marque : {{ post.brand }}</p> -->
+                    <!-- <p class="product-desc">{{ post.description }}</p> -->
+                    <!-- <p class="product-rating"><span v-for="value in Math.floor(post.rating || 0)">⭐</span>{{ post.rating }} -->
+                    <!-- </p> -->
+                    <div class="marqueBtn">
+                        <p class="product-price">{{ post.price }} $</p>
+                        <button class="btn-add">Ajouter</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,65 +64,77 @@ onMounted(() => {
 
 <style scoped>
 .containerComponent {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
-    /* margin-left: 15rem; */
 }
 
 .container {
-    /* width: 70%; */
-    padding: 20px;
+    padding: 8px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-     font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .items {
-    height: 470px;
-    border: 1px solid #c7c7c7;
-    border-radius: 10px;
+    border: 1px solid #c7c7c78e;
     padding: 15px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-    background-color: white;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.items:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 1rem ;
+    border: 1px solid red;
+    background: white;
+    color: red;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-add:hover {
+    background-color: red;
+    color: white;
 }
 
 img {
-    transition: transform 0.2s ease;
-}
-
-.items:hover .product-img {
-
-    transform: scale(1.1);
+    margin-top: 0;
 }
 
 .product-img {
     width: 100%;
     height: 200px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .product-title {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin: 10px 0;
 }
 
 .product-price {
-    font-size: 1.4rem;
-    color: rgb(255, 0, 0);
-    font-weight: bold;
-    background-color: #ffe8ee;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 700;
 }
 
 .product-brand {
     padding: 0.3rem;
-    /* background-color: #ebf7ee; */
 }
+
 .product-category {
+    display: inline;
+    margin-top: 5rem;
     padding: 0.3rem;
     background-color: #ebf7ee;
 }
@@ -136,18 +143,7 @@ img {
     margin-top: 1rem;
 }
 
-.btn-add {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border: 2px solid #3633ff;
-    background: white;
-    color: #3633ff;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
 .btn-add:hover {
-    background-color: #3633ff;
     color: white;
 }
 

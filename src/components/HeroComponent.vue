@@ -16,7 +16,7 @@
 <style scoped>
 .container {
      margin: 0 auto;
-  width: 70%;
+  /* width: 70%; */
   height: 300px;
   background-image: url(/images/Image.png);
   background-size: cover;   /* toute l’image est visible */

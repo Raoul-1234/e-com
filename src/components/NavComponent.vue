@@ -38,9 +38,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem;
   font-family: "Poppins", sans-serif;
-  background-color: #3633ff;
+  background-color: #131921;
   color: white;
 }
 

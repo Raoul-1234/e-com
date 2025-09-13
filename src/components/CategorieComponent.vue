@@ -88,10 +88,10 @@ function show(event) {
 
 <style scoped>
 .containerCategorie {
-  width: 20%;
+  width: 300px;
   height: 100vh;
   padding: 1.5rem;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
   border: 1px solid rgba(214, 210, 210, 0.4);
@@ -108,7 +108,7 @@ function show(event) {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #3633ff;
+  color: red;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(54, 51, 255, 0.3);
 }
